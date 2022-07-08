@@ -1,0 +1,30 @@
+{% extends "guestlayout.html" %}
+
+{% block title %}Login Page{% endblock %}
+
+{% block h1 %}Welcome to BooksReview!{% endblock %}
+
+{% block form %}
+	<img src="static/images/book.svg" height="100">
+{% endblock %}
+
+{% block image%}	
+	<h1>Login</h1>
+	<form action="{{ url_for('login') }}" method="post">
+		<div class="form-group">
+			<input class="form-control" name="username" placeholder="Username">
+		</div>
+		<div class="form-group">
+			<input type="password" class="form-control" name="password" placeholder="Password">
+		</div>
+		<div class="form-group">
+			<button class="btn btn-primary">Login</button>
+		</div>
+	</form>
+{% endblock %}
+
+{% block alertmessage %} Wrong username or password. Don't have an account? {% endblock %}
+{% block alertlink %}<a href="register" class="alert-link">Register</a>{% endblock %}
+
+{% block infomessage %}Don't have an account? {% endblock %}
+{% block infolink %}<a href="register" class="alert-link">Register</a>{% endblock %}

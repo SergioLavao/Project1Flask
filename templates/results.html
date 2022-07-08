@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search Results
+{% endblock %}
+
+{% block body %}
+{% if error%}
+<div class="col-sm-12 ">
+	<div class="d-flex justify-content-center">
+		<img src="static/images/error.svg" height="100">
+	</div>
+</div>
+<div class="col-sm-12">
+<div class="alert alert-danger" role="alert">
+  Oops, there are no results! Search again. <a href="main" class="alert-link">Go back</a>
+</div>
+</div>
+{%else%}
+{% for book in books %}
+<div class="col-sm-6">
+	<div class="jumbotron">
+		<h1 class="display-5">{{book.title}}</h1>
+		<p class="lead">Author: {{book.author}}</p>
+	    <p class="lead">Year: {{book.year}}</p>
+        <hr class="my-4">
+		<p>ISBN: {{book.isbn}}</p>
+	    <p class="lead">
+        </p>
+		<a class="navbar-brand mx-auto text-light" href="/book/{{book.isbn}}"><button class="btn btn-primary">Review it!</button></a>
+	</div>
+</div>
+{% endfor %}
+{% endif%}
+{% endblock %} 

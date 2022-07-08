@@ -1,0 +1,16 @@
+.maincol img{
+	height: 150px;
+	width: 150px;
+}
+
+.jumbotron{
+	padding: 20px;
+}
+
+.container{
+	margin-top: 0;
+}
+
+body{
+	padding-top: 60px;
+}

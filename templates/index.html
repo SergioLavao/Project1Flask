@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    MainPage
+{% endblock %}
+
+{% block body %}
+        <div class="col-md-12">
+            <div class="jumbotron jumbotron-fluid maincol">
+            <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                <h1 class="display-4">Welcome!</h1>
+                <h1 class="display-4">{{session['firstname']}} {{session['lastname']}}</h1>
+                <p class="lead">Let's review some books!</p>
+                </div>
+                <div class="col-sm-4">
+                    <img src="static/images/{{session['icon_id']}}.svg">
+                </div>
+                <div class="col-md-12">
+                <h1 class="display-4">Search a book</h1>
+                    <p class="lead">Search your favorite book and leave a review!</p>
+                </div>
+                <div class="col-md-12">
+
+                <form action="{{ url_for('results') }}" method="post">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="searchform" placeholder="Search by ISBN, author, or title." aria-label="Search" required="true">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary">Search</button>
+                </div>
+                </form>
+
+                </div>
+            </div>
+            </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="jumbotron jumbotron-fluid selecteable">
+            <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                <h1 class="display-4">About website</h1>
+                    <p class="lead">Search your favorite book and leave a review!,This website it's my Project 1 of the course CS50's Web Programming with Python and JavaScript. It has been done for educational purposes, uses third party material.</p>
+                </div>
+            </div>
+            </div>
+            </div>
+        </div>
+{% endblock %}

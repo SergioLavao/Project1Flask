@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+	<div class="col-sm-6">
+		<h1>
+		{% block h1 %}{% endblock %}
+		</h1>
+		{% block form%}{% endblock %}
+	</div>
+	<div class="col-sm-6">
+		{% block image %}{% endblock %}
+	</div>
+	<div class="col-sm-12">
+	{% if error %}
+	<div class="alert alert-danger" role="alert">
+	{% block alertmessage %}{% endblock %}
+	{% block alertlink %}{% endblock %}
+	</div>
+	{% else %}
+	<div class="alert alert-info" role="alert">
+	{% block infomessage %}{% endblock %}
+	{% block infolink %}{% endblock %}
+	</div>
+	{%endif%}
+	</div>
+{% endblock %}
